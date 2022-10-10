@@ -1,0 +1,30 @@
+@model Controle_Financeiro.Models.Receita
+
+@{
+    ViewData["Tilte"] = "Retirada";
+}
+
+<h2>Retirada</h2>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+            </div>
+             
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Retirar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</hr>
+<br>
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>

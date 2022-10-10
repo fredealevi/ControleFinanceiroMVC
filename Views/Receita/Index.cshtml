@@ -1,0 +1,49 @@
+@model IEnumerable<Controle_Financeiro.Models.Receita>
+
+    @{
+        ViewData["Title"] = "Receita de Entrada";
+    }
+
+    <h2>Receita</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    
+                    <td>
+                        @Html.DisplayFor(model => item.Valor)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(model => item.Tipo)
+                    </td>
+                    
+                    <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Retirada</a>
+                    <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Deletar" asp-route-Id="@item.Id">Deletar</a>
+                    </td>
+                </tr>
+            }
+            </thead>
+        </tbody>
+        <p>
+            <a asp-action="Criar">Nova Entrada</a>
+        </p>
+
+    </table>
