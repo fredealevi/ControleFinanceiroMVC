@@ -17,6 +17,7 @@ namespace Controle_Financeiro.Controllers
             _tabela = context;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var receitas = _tabela.Receitas.ToList();
