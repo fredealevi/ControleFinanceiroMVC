@@ -3,6 +3,7 @@ using Controle_Financeiro.ContextDb;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Controle_Financeiro.Migrations
 {
     [DbContext(typeof(BancoDbContext))]
-    partial class BancoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221010234158_Descricao")]
+    partial class Descricao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,26 +61,6 @@ namespace Controle_Financeiro.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Receitas");
-                });
-
-            modelBuilder.Entity("Controle_Financeiro.Models.ReservaEmergencia", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Tipo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ReservaEmergencia");
                 });
 #pragma warning restore 612, 618
         }

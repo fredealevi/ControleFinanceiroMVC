@@ -1,7 +1,7 @@
-@model Controle_Financeiro.Models.Receita
+@model Controle_Financeiro.Models.Despesa
 
 @{
-    ViewData["Title"] = "Deletar Receita";
+    ViewData["Title"] = "Deletar Despesa";
 }
 
 <h2 style="color: red;">Deseja Realmente Deletar?</h2>
@@ -17,12 +17,12 @@
             @Html.DisplayFor(x => x.Valor)
         </dt>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(x => x.Tipo)
+            @Html.DisplayNameFor(x => x.Descricao)
         </dt>
         <dt class="col-sm-10">
-            @Html.DisplayFor(x => x.Tipo)
+            @Html.DisplayFor(x => x.Descricao)
         </dt>
-    </dl>
+        </dl>
 </div>
 
 <form asp-action="Deletar">

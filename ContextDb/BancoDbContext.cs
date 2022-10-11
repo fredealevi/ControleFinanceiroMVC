@@ -16,5 +16,6 @@ namespace Controle_Financeiro.ContextDb
         
         public DbSet<Receita> Receitas {get; set;}
         public DbSet<Despesa> Despesas {get; set;}
+        public DbSet<ReservaEmergencia> ReservaEmergencia {get; set;}
     }
 }

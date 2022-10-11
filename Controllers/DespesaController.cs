@@ -18,9 +18,9 @@ namespace Controle_Financeiro.Controllers
 
         public IActionResult Index()
         {
-            var despesa = _tabela.Despesas.ToList();
+            var despesas = _tabela.Despesas.ToList();
 
-            return View(despesa);
+            return View(despesas);
         }
 
         [HttpGet]
@@ -63,7 +63,7 @@ namespace Controle_Financeiro.Controllers
             despesa.Descricao = despesaAtualizada.Descricao;
             despesa.Valor = despesaAtualizada.Valor;
 
-            _tabela.Despesas.Add(despesa);
+            _tabela.Despesas.Update(despesa);
             _tabela.SaveChanges();
 
             return RedirectToAction(nameof(Index));
@@ -91,7 +91,7 @@ namespace Controle_Financeiro.Controllers
             return View(despesa);
         }
 
-        [HttpDelete]
+        [HttpPost]
         public IActionResult Deletar(Despesa despesaDeletada)
         {
             var despesa = _tabela.Despesas.Find(despesaDeletada.Id);
@@ -101,8 +101,6 @@ namespace Controle_Financeiro.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
 
     }
 }

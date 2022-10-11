@@ -1,0 +1,43 @@
+@model IEnumerable<Controle_Financeiro.Models.Despesa>
+
+@{
+    ViewData["Title"] = "Despesas";
+}
+
+ <h2>Despesas</h2>
+  
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Descricao)
+                </th>
+                 <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Descricao)
+                    </td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                        <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                        <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>                
+            }
+        </tbody>
+          <p>
+        <a asp-action="Criar">Nova Despesa</a>
+    </p>
+    </table>

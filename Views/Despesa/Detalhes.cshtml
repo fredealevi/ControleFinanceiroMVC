@@ -1,0 +1,26 @@
+@model Controle_Financeiro.Models.Despesa
+
+@{
+    ViewData["Title"] = "Detalhes da Despesa";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Valor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Valor)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Descricao)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Descricao)
+        </dt>
+          </dl>
+</div>
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> |
+<a asp-action="Index">Voltar</a>
