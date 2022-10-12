@@ -1,0 +1,27 @@
+@model Controle_Financeiro.Models.ReservaEmergencia
+
+@{
+    ViewData["Title"] = "Detalhes da Reserva";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Valor)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Valor)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Tipo)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Tipo)
+        </dt>
+       
+    </dl>
+</div>
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> |
+<a asp-action="Index">Voltar</a>

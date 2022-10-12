@@ -1,0 +1,47 @@
+@model IEnumerable<Controle_Financeiro.Models.ReservaEmergencia>
+
+    @{
+        ViewData ["Title"] = "Reserva de Emergência";
+    }
+
+     <h2>Reserva de Emergência</h2>
+  
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+                 <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+                  <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Valor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Tipo)
+                    </td>
+                    
+                     <td>
+                        <a asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                        <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                        <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a>
+                    </td>
+                </tr>                
+            }
+        </tbody>
+          <p>
+        <a asp-action="Criar">Novo Contato</a>
+    </p>
+    </table>
